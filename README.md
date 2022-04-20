@@ -43,6 +43,10 @@ used for creating separate versions of a video)
 
 ![](CS4843-Dataflow.drawio.png)
 
+## ***Work Discord***
+
+[Discord](https://discord.gg/6AmEpgpPtu)
+
 ## ***Test API***
 
 The test API can be found [here](https://us-central1-cs4843-youtube-dl.cloudfunctions.net/test-youtube-video-download?link=), change the argument value of "link".

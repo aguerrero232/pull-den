@@ -2,6 +2,14 @@
 
 Cloud Computing Group Project - Video Archiving Application
 
+## **Collaborators**
+
+* Ariel Guerrero
+* Shejan Shuza
+* Hunter Long
+* Viswa B
+* Aaron G
+
 ## ***Description***
 
 The service can allow a user to submit a YouTube video link to the service, and the service will create a
@@ -18,7 +26,7 @@ descriptions, subtitles, thumbnails, etc. based on yt-dlp
 4. Integrate the service workflow to support Google’s BigQuery to gather statistics and analytics of
 the service itself.
 
-### ***Utilized tools and services***
+### ***Utilized Tools and Services***
 
 1. Cloud Functions (API environment)
 2. Pub/Sub (function organization and concurrency)

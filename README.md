@@ -2,7 +2,7 @@
 
 Cloud Computing Group Project - Video Archiving Application
 
-# **Collaborators**
+## **Collaborators**
 
 * Ariel Guerrero
 * Shejan Shuza

@@ -26,7 +26,7 @@ descriptions, subtitles, thumbnails, etc. based on yt-dlp
 4. Integrate the service workflow to support Google’s BigQuery to gather statistics and analytics of
 the service itself.
 
-### ***Utilized tools and services***
+### ***Utilized Tools and Services***
 
 1. Cloud Functions (API environment)
 2. Pub/Sub (function organization and concurrency)

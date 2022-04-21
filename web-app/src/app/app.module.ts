@@ -25,6 +25,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideoCardComponent } from './video-card/video-card.component';
 import { VideoRecsDisplayComponent } from './video-recs-display/video-recs-display.component';
+import { UserLibraryComponent } from './user-library/user-library.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VideoRecsDisplayComponent } from './video-recs-display/video-recs-displ
     NavComponent,
     SearchByUrlComponent,
     VideoCardComponent,
-    VideoRecsDisplayComponent
+    VideoRecsDisplayComponent,
+    UserLibraryComponent
   ],
   imports: [
     BrowserModule,

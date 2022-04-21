@@ -26,9 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VideoCardComponent } from './video-card/video-card.component';
 import { VideoRecsDisplayComponent } from './video-recs-display/video-recs-display.component';
 import { UserLibraryComponent } from './user-library/user-library.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './user-auth/login/login.component';
+import { SignUpComponent } from './user-auth/sign-up/sign-up.component';
+import { LogoutComponent } from './user-auth/logout/logout.component';
 
 @NgModule({
   declarations: [

@@ -29,6 +29,7 @@ import { UserLibraryComponent } from './user-library/user-library.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { SignUpComponent } from './user-auth/sign-up/sign-up.component';
 import { LogoutComponent } from './user-auth/logout/logout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { LogoutComponent } from './user-auth/logout/logout.component';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-nav',
@@ -29,6 +30,10 @@ export class NavComponent {
     this.router.navigate(["/sign-up"]);
   }
 
-  constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
+  openDownload(content: any) {
+    this.modalService.open(content);
+  }
+
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router, private modalService: NgbModal) { }
 
 }

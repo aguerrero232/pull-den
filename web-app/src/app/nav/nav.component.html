@@ -59,8 +59,8 @@
         </a>
       </div>
 
-      <div>
-        <a mat-list-item href="#" id="lib">
+      <div (click)="openDownload(content)">
+        <a mat-list-item href=" #" id="lib">
           <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
             <path
@@ -113,3 +113,22 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+
+    <div class="card" id="modal-card">
+
+      <div class="card-body">
+
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>

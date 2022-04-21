@@ -37,8 +37,6 @@ the service itself.
 used for creating separate versions of a video)
 7. Python 3.9 (used as the basis of youtube-dl and used as the language of the APIs)
 
-
-
 ## ***Dataflow Diagram***
 
 ![](CS4843-Dataflow.drawio.png)
@@ -50,3 +48,11 @@ used for creating separate versions of a video)
 ## ***Test API***
 
 The test API can be found [here](https://us-central1-cs4843-youtube-dl.cloudfunctions.net/test-youtube-video-download?link=), change the argument value of "link".
+
+# Setting up Angular
+
+## Install CLI
+
+    npm install @angular/cli
+
+## Create new project

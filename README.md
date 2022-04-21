@@ -55,4 +55,14 @@ The test API can be found [here](https://us-central1-cs4843-youtube-dl.cloudfunc
 
     npm install @angular/cli
 
-## Create new project
+## Install Dependancies
+    
+    change into the web_app directory and run
+    npm install
+
+## Run the application
+
+    change into the web_app directory and run
+    ng serve
+    
+* ***you need to have installed the angular cli***

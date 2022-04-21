@@ -26,6 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VideoCardComponent } from './video-card/video-card.component';
 import { VideoRecsDisplayComponent } from './video-recs-display/video-recs-display.component';
 import { UserLibraryComponent } from './user-library/user-library.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { UserLibraryComponent } from './user-library/user-library.component';
     SearchByUrlComponent,
     VideoCardComponent,
     VideoRecsDisplayComponent,
-    UserLibraryComponent
+    UserLibraryComponent,
+    LoginComponent,
+    SignUpComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

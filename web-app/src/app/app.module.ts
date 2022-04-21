@@ -14,7 +14,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { RecVidsTableComponent } from './rec-vids-table/rec-vids-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -24,14 +23,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VideoCardComponent } from './video-card/video-card.component';
+import { VideoRecsDisplayComponent } from './video-recs-display/video-recs-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    RecVidsTableComponent,
     NavComponent,
-    SearchByUrlComponent
+    SearchByUrlComponent,
+    VideoCardComponent,
+    VideoRecsDisplayComponent
   ],
   imports: [
     BrowserModule,

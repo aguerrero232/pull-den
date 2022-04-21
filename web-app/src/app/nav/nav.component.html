@@ -1,24 +1,106 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>
+      <span class="material-icons">
+        dashboard
+      </span>
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <div>
+        <a mat-list-item href="#" id="lib">
+          <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+          </svg>
+          <p>&nbsp;&nbsp;Sign In</p>
+        </a>
+      </div>
+
+      <div>
+        <a mat-list-item href="#" id="lib">
+          <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+          </svg>
+          <p>&nbsp;&nbsp;Sign Up</p>
+        </a>
+      </div>
+
+      <div>
+        <a mat-list-item href="#" id="lib">
+          <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+          </svg>
+          <p>&nbsp;&nbsp;Sign Out</p>
+        </a>
+      </div>
+
+      <div>
+        <a mat-list-item href="#" id="lib">
+          <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-collection-play" viewBox="0 0 16 16">
+            <path
+              d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z" />
+            <path
+              d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z" />
+          </svg>
+          <p>&nbsp;&nbsp;Library</p>
+        </a>
+      </div>
+
+      <div>
+        <a mat-list-item href="#" id="lib">
+          <svg style="margin-bottom: 14px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path
+              d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+            <path
+              d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+          </svg>
+          <p>&nbsp;&nbsp;Download</p>
+        </a>
+      </div>
+
+
     </mat-nav-list>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>web-app</span>
+      <span>Pull Den</span>
+      <!-- search -->
+
+      <!-- spacer -->
+      <span class="spacer" style="width: 130px;"></span>
+
+      <div class="form-floating" style="width: 65%; ">
+        <input class="form-control" id="floatingInput" placeholder="Search"
+          style="background-color: #3e3e3e; border: solid 1px #6a6a6a; width: 99%;">
+        <label for="floatingInput" style="color: lightgrey;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" style="margin-bottom: 6px;" fill="currentColor"
+            class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg></label>
+      </div>
+
+
+
     </mat-toolbar>
     <!-- Add Content Here -->
 
-    <app-landing></app-landing>
+
+    <router-outlet></router-outlet>
+
+
+
+
 
   </mat-sidenav-content>
+
 </mat-sidenav-container>

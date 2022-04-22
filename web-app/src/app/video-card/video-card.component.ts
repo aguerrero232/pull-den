@@ -9,13 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class VideoCardComponent implements OnInit {
   // @ inuput card object
   @Input() card: any;
-  thumbnail = '';
 
   constructor() { }
   ngOnInit(): void {
-  }
-
-  setBackground() {
 
   }
 

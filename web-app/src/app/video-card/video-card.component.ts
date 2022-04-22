@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-
 @Component({
   selector: 'app-video-card',
   templateUrl: './video-card.component.html',
@@ -11,6 +9,7 @@ export class VideoCardComponent implements OnInit {
   @Input() card: any;
 
   constructor() { }
+
   ngOnInit(): void {
 
   }

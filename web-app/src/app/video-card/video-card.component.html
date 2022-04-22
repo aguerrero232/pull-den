@@ -1,12 +1,19 @@
 <!-- set background to card thumbnail -->
 <mat-card>
-    <!-- <mat-card-header>
-    
+    <!-- <mat-card-header>  
     </mat-card-header> -->
     <img mat-card-image src="{{card.thumbnail}}" alt="Photo of a {{card.title}}">
     <mat-card-content>
-        <button mat-icon-button>
-            <mat-icon>cloud_download</mat-icon>
-        </button>
+
+        <div class="row">
+            <div class="col">
+                <h3>{{card.description}}</h3>
+            </div>
+            <div class="col" style="text-align: end;">
+                <button mat-icon-button>
+                    <mat-icon>cloud_download</mat-icon>
+                </button>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>

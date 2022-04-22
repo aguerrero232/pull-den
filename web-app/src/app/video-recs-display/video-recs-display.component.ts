@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { SpinnerOverlayService } from '../spinner-overlay.service';
 
 @Component({
   selector: 'app-video-recs-display',
@@ -10,10 +9,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 export class VideoRecsDisplayComponent implements OnInit {
 
   @Input() usercardrecs: any;
-
-  ngOnInit(): void {
-  }
-
+  cards: any;
   video_thumbnail = ['https://sdzwildlifeexplorers.org/sites/default/files/2019-04/animal-hero-echidna.jpg']
 
   //  TODO: Add way to get recommendations
@@ -22,22 +18,36 @@ export class VideoRecsDisplayComponent implements OnInit {
   ];
 
 
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = [
-    { title: 'Vid 1', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "one" },
-    { title: 'Vid 2', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "two" },
-    { title: 'Vid 3', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "three" },
-    { title: 'Vid 4', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "four" },
-    { title: 'Vid 5', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "five" },
-    { title: 'Vid 6', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], channel: "six" }
-  ];
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.check_recs();
+  constructor(private spinnerService: SpinnerOverlayService) {
+    // start spinner
+    this.spinnerService.show();
+    // set a 2 second timer
+    setTimeout(() => {
+      // stop spinner
+      this.spinnerService.hide();
+      this.check_recs();
+
+    }, 3000);
+  }
+
+  ngOnInit(): void {
+
   }
 
   check_recs() {
-    if (this.usercardrecs)
-      return true;
-    return false;
+    this.gets_recs();
   }
+
+  gets_recs() {
+    var cards = [
+      { title: 'Vid 1', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 1 index 0", channel: "one" },
+      { title: 'Vid 2', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 2 index 1", channel: "two" },
+      { title: 'Vid 3', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 3 index 2", channel: "three" },
+      { title: 'Vid 4', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 4 index 3", channel: "four" },
+      { title: 'Vid 5', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 5 index 4", channel: "five" },
+      { title: 'Vid 6', link: this.video_urls[0], thumbnail: this.video_thumbnail[0], description: "video number 6 index 5", channel: "six" }
+    ];
+    this.cards = cards;
+  }
+
 }

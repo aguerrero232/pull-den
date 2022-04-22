@@ -30,6 +30,9 @@ import { LoginComponent } from './user-auth/login/login.component';
 import { SignUpComponent } from './user-auth/sign-up/sign-up.component';
 import { LogoutComponent } from './user-auth/logout/logout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SpinnerOverlayComponent } from './spinner-overlay/spinner-overlay.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserLibraryComponent,
     LoginComponent,
     SignUpComponent,
-    LogoutComponent
+    LogoutComponent,
+    SpinnerOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -64,8 +68,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSelectModule,
     MatRadioModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MatProgressSpinnerModule
   ],
+  entryComponents: [SpinnerOverlayComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

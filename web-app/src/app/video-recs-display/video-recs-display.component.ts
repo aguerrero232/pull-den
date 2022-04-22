@@ -26,7 +26,6 @@ export class VideoRecsDisplayComponent implements OnInit {
       // stop spinner
       this.spinnerService.hide();
       this.check_recs();
-
     }, 3000);
   }
 

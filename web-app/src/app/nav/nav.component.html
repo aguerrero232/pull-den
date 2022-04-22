@@ -117,18 +117,17 @@
 
 
 <ng-template #content let-modal>
-  <div class="modal-body">
+  <div class="modal-body" style="background-color: #3e3e3e;">
 
-    <div class="card" id="modal-card">
+    <div class="card" id="modal-card" style="background-color: #3e3e3e;">
 
-      <div class="card-body">
+      <div class="card-body" style="background-color: #3e3e3e;">
 
       </div>
 
     </div>
-
-    <div class="modal-footer">
-      <button type="button" class="btn" (click)="modal.close('Close click')">Close</button>
+    <div style="text-align: end;">
+      <button mat-button color="primary" (click)="modal.close('Close click')">Close</button>
     </div>
   </div>
 </ng-template>

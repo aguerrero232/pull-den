@@ -2,6 +2,8 @@
 
 Cloud Computing Group Project - Video Archiving Application
 
+## [Web Application Link](https://pull-den-web-app-prdbw7yvpq-uc.a.run.app/) 
+
 ## **Collaborators**
 
 * Ariel Guerrero

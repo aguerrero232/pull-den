@@ -37,3 +37,4 @@ def md_thumbnail_dl(event, context):
      blob = bucket.blob(vid_id)
      blob.upload_from_filename(thumbnail_jpg_version)
 
+

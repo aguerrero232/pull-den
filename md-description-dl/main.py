@@ -14,7 +14,7 @@ def md_description_dl(event, context):
      vid_url = pubsub_message
 
      ydl_opts={
-               'outtmpl':'/tmp/%(id)s.%(ext)s',
+               'outtmpl':'/tmp/%(id)s.%(ext)s'
           }
 
      with yt_dlp.YoutubeDL(ydl_opts) as ytdlp:
@@ -30,3 +30,4 @@ def md_description_dl(event, context):
      bucket = storage_client.get_bucket('md-description')
      blob = bucket.blob(vid_id)
      blob.upload_from_filename(description_filename)
+

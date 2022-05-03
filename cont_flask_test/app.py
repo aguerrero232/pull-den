@@ -30,9 +30,9 @@ def download():
 
         # need to update database entry here to signify that the video download is completed
 
-        return
+        return 200
     else:
-        return ("Not a POST request, this app only accepts POST requests.")
+        return 200
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)

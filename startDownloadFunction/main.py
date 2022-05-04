@@ -8,8 +8,25 @@ db=firestore.Client(projectid)
 bq=bigquery.Client(projectid)
 publish=pubsub_v1.PublisherClient()
 def entryPoint(request):
+  #https://brianli.com/how-to-enable-cors-for-a-google-cloud-function-using-http-invocation/
+  if request.method == 'OPTIONS':
+      ## Allows GET requests from any origin with the Content-Type
+    headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '3600'
+    }
+    return ('', 204, headers)
+
+  ## Set CORS headers for the main request
+  headers = {
+    'Access-Control-Allow-Origin': '*'
+  }
   request_json = request.get_json()
   try:
+    print(request)
+    print(request_json)
     if request and 'id' in request_json:
       doc_ref = db.collection("OWNERSHIP").document(request_json['id']) #open ownership table
       doc = doc_ref.get() #get this document
@@ -55,9 +72,10 @@ def entryPoint(request):
             })
           else: 
             return "This user already owns this video"
-      return "Function completed"
+      return ("Function completed",200,headers)
     else:
-      return "Failed if statement"
+      return ("Failed if statement",500,headers)
   except BaseException as e:
-    print("Exception hit")
-    return str(e)
+    tb=sys.exc_info()[2]
+    print("Exception hit:"+str(e.with_traceback()))
+    return (str(e.with_traceback()),500,headers)

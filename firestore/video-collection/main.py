@@ -1,7 +1,11 @@
-from google.cloud import firestore
-from google.cloud import pubsub_v1
+from google.cloud import firestore,pubsub_v1,bigquery
 subscriber = pubsub_v1.SubscriberClient();
-db=firestore.Client("cs4843-youtube-dl")
+projectid="cs4843-youtube-dl"
+collectionid="SHARING"
+datasetid="PullDenAnalytics"
+tableid="videos"
+db=firestore.Client(projectid)
+bq=bigquery.Client(projectid)
 def entryPoint(request): 
   request_json = request.get_json()
   try:
@@ -13,6 +17,15 @@ def entryPoint(request):
         "channelID":request_json['channelID'],
         "GCSVideo":request_json['GCSVideo']
       }, merge=True)
+      #return "Added Video Details to Firstore"
+      job=bq.query(f"""
+      INSERT INTO 
+      `{projectid}.{datasetid}.{tableid}`
+      (vidID,channelID,startedDownload,shareCount,userDownloaded)
+      VALUES
+      ("{request_json['vidID']}","{request_json['channelID']}",0,"{request_json['userID']}")
+      """)
+      job.result()
       return "Added Video Details to Firstore"
     else:
       return "Failed if statement"
@@ -20,3 +33,4 @@ def entryPoint(request):
     
   except BaseException as e:
     return str(e)
+

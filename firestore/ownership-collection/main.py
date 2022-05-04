@@ -1,5 +1,6 @@
 from google.cloud import firestore
-db=firestore.Client("cs4843-youtube-dl")
+projectid="cs4843-youtube-dl"
+db=firestore.Client(projectid)
 
 def entryPoint(request):
   request_json = request.get_json()
@@ -21,7 +22,7 @@ def entryPoint(request):
                   "title":request_json['title'],
                   "channelID":request_json['channelID'],
                   "GCSVideo":request_json['GCSVideo']
-                  })
+                })
               videoList.append(request_json['vidID'])
               doc.set({
                   "rootUserID":request_json['id'],
@@ -30,8 +31,6 @@ def entryPoint(request):
       return "Added to Ownership collection"
     else:
       return "Failed if statement"
-    return request_json['id']
-    
+
   except BaseException as e:
     return str(e)
-

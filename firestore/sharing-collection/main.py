@@ -1,8 +1,12 @@
-from google.cloud import firestore
+from google.cloud import firestore,bigquery
 import random
 import string
-
-db=firestore.Client("cs4843-youtube-dl")
+projectid="cs4843-youtube-dl"
+collectionid="SHARING"
+datasetid="PullDenAnalytics"
+tableid="videos"
+db=firestore.Client(projectid)
+bq=bigquery.Client(projectid)
 def entryPoint(request): 
 
   request_json = request.get_json()
@@ -13,7 +17,7 @@ def entryPoint(request):
 
     while True: 
       sharableLink = ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase, k=15))
-      share_ref = db.collection("SHARING").document(sharableLink)
+      share_ref = db.collection(collectionid).document(sharableLink)
       doc = share_ref.get()
       if not doc.exists:
         break
@@ -29,7 +33,14 @@ def entryPoint(request):
           "showDesc":showDesc
         }    
       }, merge=True)
-      return "Added to SHARING collection"
+      print( "Added to SHARING collection")
+      job=bq.query(f"""UPDATE 
+      `{projectid}.{datasetid}.{tableid}`
+      SET shareCount = shareCount + 1
+      WHERE vidID = "{request_json['vidID']}"
+      """)
+      job.result()
+      return sharableLink
     else:
       return "Failed if statement"
     

@@ -1,7 +1,7 @@
 from google.cloud import firestore,pubsub_v1,bigquery
 subscriber = pubsub_v1.SubscriberClient();
 projectid="cs4843-youtube-dl"
-collectionid="SHARING"
+collectionid="VIDEOS"
 datasetid="PullDenAnalytics"
 tableid="videos"
 db=firestore.Client(projectid)

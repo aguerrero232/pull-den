@@ -4,4 +4,4 @@ yt-dlp
 google-cloud-storage
 google-cloud-bigquery
 google-cloud-firestore
-Pillow
+hurry.filesize

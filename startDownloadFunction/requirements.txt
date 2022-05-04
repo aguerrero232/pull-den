@@ -1,2 +1,4 @@
 google-cloud-firestore
 google-cloud-pubsub
+google-cloud-bigquery
+yt-dlp

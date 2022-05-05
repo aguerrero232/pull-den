@@ -14,7 +14,7 @@ Cloud Computing Group Project - Video Archiving Application
 * Viswa Bhargavi
 
 
-## ***Video ***
+## ***Video***
 
 [![](https://img.youtube.com/vi/sZdMpCt7g9w/0.jpg)](https://www.youtube.com/watch?v=sZdMpCt7g9w)
 ## ***Description***

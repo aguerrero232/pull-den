@@ -26,7 +26,7 @@ def entryPoint(request):
         doc_ref = db.collection("VIDEO").document(vid) #open video table
         data = doc_ref.get().to_dict() #get this document 
         user_video_data[vid] = data
-      return ({"videos": user_video_data}, 200, headers)
+      return ({"videos": user_video_data}, 200, headers) #return JSON
     else:
       return("Error: No ID provided", 400, headers)
   except BaseException as e:

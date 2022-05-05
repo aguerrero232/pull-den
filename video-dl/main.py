@@ -32,16 +32,24 @@ def download_video(event, context):
             if blob.exists():
                 print("Blob already exists: "+vid_url)
             else:
-                if yinfo['filesize_approx'] < (1024**3)*4:
+                if 'filesize' in yinfo:
+                    estimatesize=yinfo['filesize']
+                elif 'filesize_approx' in yinfo:
+                    estimatesize=yinfo['filesize_approx']
+                else:
+                    print("The size of the video cannot be determined")
+                    return
+                if estimatesize < (1024**3)*4:
                     print("File doesn't exist, downloading: "+vid_url)
                     yinfo=ytdl.extract_info(vid_url)
-                    print("Download finished from YouTube, "+yinfo['id']+"."+yinfo['ext']+" file size is "+str(os.path.getsize("/tmp/"+yinfo['id']+"."+yinfo['ext']))+" bytes or "+size(os.path.getsize("/tmp/"+yinfo['id']+"."+yinfo['ext']),system=iec))
+                    finalsize=os.path.getsize("/tmp/"+yinfo['id']+"."+yinfo['ext'])
+                    print("Download finished from YouTube, "+yinfo['id']+"."+yinfo['ext']+" file size is "+str(finalsize)+" bytes or "+size(finalsize,system=iec))
                     
                     blob.upload_from_filename("/tmp/"+yinfo['id']+"."+yinfo['ext'])
                     end=timer()
-                    print("Downloaded and Uploaded "+yinfo['id']+"."+yinfo['ext']+", ("+str(os.path.getsize("/tmp/"+yinfo['id']+"."+yinfo['ext']))+" bytes or "+size(os.path.getsize("/tmp/"+yinfo['id']+"."+yinfo['ext']),system=iec)+") to GCS in "+str(end-start)+" seconds")
+                    print("Downloaded and Uploaded "+yinfo['id']+"."+yinfo['ext']+", ("+str(finalsize)+" bytes or "+size(finalsize,system=iec)+") to GCS in "+str(end-start)+" seconds")
                 else:
-                    print("Expected file size is too large, 4GiB or smaller, the expected file size is: "+str(yinfo['filesize_approx'])+" bytes ("+size(yinfo['filesize_approx'],system=iec)+")")
+                    print("Expected file size is too large, 4GiB or smaller, the expected file size is: "+str(estimatesize)+" bytes ("+size(estimatesize,system=iec)+")")
                     return
             print(blob.public_url)
             doc_ref=db.collection(collectionid).document(vid_id)

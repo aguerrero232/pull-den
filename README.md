@@ -13,6 +13,10 @@ Cloud Computing Group Project - Video Archiving Application
 * Hunter Long
 * Viswa Bhargavi
 
+
+## ***Video ***
+
+[![](https://img.youtube.com/vi/sZdMpCt7g9w/0.jpg)](https://www.youtube.com/watch?v=sZdMpCt7g9w)
 ## ***Description***
 
 The service can allow a user to submit a YouTube video link to the service, and the service will create a

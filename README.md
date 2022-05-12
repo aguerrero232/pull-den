@@ -77,6 +77,10 @@ This can be examined by the developers through the BigQuery interface to analyze
 
 [Discord](https://discord.gg/6AmEpgpPtu)
 
+## ***Trello Board***
+
+[Trello](https://trello.com/b/IAi19oex/cloudcomputingpullden)
+
 ## ***Test API***
 
 The test API can be found [here](https://us-central1-cs4843-youtube-dl.cloudfunctions.net/test-youtube-video-download?link=), change the argument value of "link".

@@ -13,11 +13,7 @@ Cloud Computing Group Project - Video Archiving Application
 * Hunter Long
 * Viswa Bhargavi
 
-
-## ***Video***
-
-[![](https://img.youtube.com/vi/sZdMpCt7g9w/0.jpg)](https://www.youtube.com/watch?v=sZdMpCt7g9w)
-## ***Description***
+## **Description**
 
 The service can allow a user to submit a YouTube video link to the service, and the service will create a
 clone of the video (downloading from YouTube) on Cloud Storage (including video metadata like descriptions, subtitles, thumbnails, etc.), the user will then receive a “master link” that allows modification of the permissions to their sharable link to the video on the service (count of usable clicks, duration, login requirements, etc.). The service also supports interacting with the native YouTube API for searching and showing suggestions on videos.
